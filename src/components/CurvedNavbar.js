@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaHome, FaUser, FaCode, FaFilePdf, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
 import "./CurvedNavbar.css";
 
@@ -6,6 +6,33 @@ const CurvedNavbar = () => {
   const [active, setActive] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLogoExpanded, setIsLogoExpanded] = useState(false);
+
+  useEffect(() => {
+    const sectionIds = ["home", "about", "projects", "resume", "contact"];
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, 
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleNavigation = (sectionId) => {
     setActive(sectionId); 

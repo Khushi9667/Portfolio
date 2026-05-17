@@ -84,7 +84,6 @@ const Sudoku = () => {
                 </div>
               );
             }
-            
             if (isAnimating) {
               return (
                 <div
@@ -95,12 +94,13 @@ const Sudoku = () => {
                 </div>
               );
             }
-
+            const isWrong = cell !== 0 && cell !== solutionBoard[rowIndex][colIndex];
             return (
               <div key={`${rowIndex}-${colIndex}`} className="sudoku-cell">
                 <input
-                  type="number"
-                  className="sudoku-input"
+                  type="text" 
+                  inputMode="numeric"
+                  className={`sudoku-input ${isWrong ? 'invalid-cell' : ''}`}
                   value={cell === 0 ? '' : cell}
                   onChange={(e) => handleInputChange(e, rowIndex, colIndex)}
                   maxLength="1"

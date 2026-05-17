@@ -450,7 +450,7 @@ body {
 }
 
 .card-yelpcamp project-image {
-  transform: translateY(-5%);
+  transform: translateY(-10%);
 }
 
 .modal-details-content {

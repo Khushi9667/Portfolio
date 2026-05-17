@@ -98,7 +98,12 @@ const sendEmail = (e) => {
                     </a>
                   </div>
                   <div className="tech-icons">
-                    <a href="mailto:khushijain.25.2003@gmail.com" aria-label="Email">
+                    <a 
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=khushijain.25.2003@gmail.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      aria-label="Email"
+                    >
                       <FaEnvelope />
                     </a>
                   </div>

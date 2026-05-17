@@ -207,15 +207,7 @@
 
   .autumn-tree {
     height: 142vh; 
-    transform: translateX(95vw) translateY(10vh);
-    opacity: 0.95; 
-  }
-}
-
-@media (max-width: 600px) {
-  .autumn-tree {
-    height: 142vh; 
-    transform: translateX(25vw) translateY(3vh);
+    transform: translateX(75vw) translateY(6vh);
     opacity: 0.95; 
   }
 }

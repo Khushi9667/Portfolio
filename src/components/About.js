@@ -64,7 +64,7 @@ const Home = () => {
                     <h2 className="about-heading">About Me</h2>
                     <div className="item-quote">
                       <p>
-                      Hi, I’m <b>Khushi Jain</b> — a curious mind who loves solving
+                      Hi, I’m <b>Khushi Jain</b>, a curious mind who loves solving
                       problems and bringing ideas to life. I believe technology is
                       as much about people as it is about code, and I enjoy creating
                       experiences that feel intuitive, thoughtful, and a little fun.
@@ -73,7 +73,7 @@ const Home = () => {
                       I’m passionate about turning <i>“what ifs”</i> into <i>“why nots”</i> and making the process enjoyable along the way. <b>Life (and code)</b> is full of puzzles, and I genuinely love figuring them out.
                       </p>
                       <p>
-                      Outside of work, I find joy in books or late-night brainstorms. At heart, I’m a mix of creativity and discipline — 
+                      Outside of work, I find joy in books or brainstorming. At heart, I’m a mix of creativity and discipline.
                       I love exploring fresh ideas but equally value the structure of turning them into reality.
                       </p>
                     </div>

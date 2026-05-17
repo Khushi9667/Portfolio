@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+.home-section {
+  display: flex;
+  align-items: stretch; 
+  min-height: 100vh; 
+  box-sizing: border-box;
+  padding-top: 80px; 
+  background-color: #faf3e0;
+  position: relative;
+  overflow: hidden; 
+}
+
+.wrapper-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.text-row {
+  flex: 1; 
+  position: relative;
+  z-index: 2;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  text-align: left;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.guitar-container {
+  position: relative;
+  width: 100%;
+  font-size: clamp(2.5rem, 6vw, 8.5rem); 
+}
+
+.guitar-text {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.05em; 
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15em;
+  letter-spacing: 0.07em;
+  position: relative;
+  z-index: 2;
+  color: #3A2518;
+}
+
+.guitar-text span {
+  display: inline-block;
+  will-change: transform;
+}
+
+.guitar-text span.animate-pluck {
+  animation: pluck-vibrate 0.8s ease-out;
+}
+
+@keyframes pluck-vibrate {
+  0%   { transform: translateY(0) rotate(0deg) scaleX(1); }
+  10%  { transform: translateY(-5px) rotate(-2deg) scaleX(1.1); }
+  20%  { transform: translateY(4px) rotate(2deg) scaleX(0.95); }
+  30%  { transform: translateY(-3px) rotate(-1deg) scaleX(1.05); }
+  40%  { transform: translateY(2px) rotate(1deg) scaleX(0.98); }
+  50%  { transform: translateY(-2px) rotate(-0.5deg) scaleX(1.02); }
+  60%  { transform: translateY(1px) rotate(0.5deg) scaleX(1); }
+  70%  { transform: translateY(-1px) scaleX(1.01); }
+  80%  { transform: translateY(0.5px) scaleX(0.99); }
+  100% { transform: translateY(0) rotate(0deg) scaleX(1); }
+}
+
+#guitar-string {
+  stroke: #3A2518;
+  stroke-width: 5;
+  fill: none;
+}
+
+#guitar-string.animate-string {
+  animation: string-vibrate 0.8s ease-out;
+}
+
+@keyframes string-vibrate {
+  0%   { d: path("M0,50 Q150,50 300,50 Q450,50 600,50"); }
+  25%  { d: path("M0,50 Q150,30 300,50 Q450,70 600,50"); }
+  50%  { d: path("M0,50 Q150,60 300,50 Q450,40 600,50"); }
+  75%  { d: path("M0,50 Q150,40 300,50 Q450,60 600,50"); }
+  100% { d: path("M0,50 Q150,50 300,50 Q450,50 600,50"); }
+}
+
+.guitar-container svg {
+  margin-top: -0.55em; 
+  width: 82%; 
+  height: 0.6em; 
+  display: block;
+}
+
+.typed-container {
+  margin-top: clamp(10px, 3vw, 40px);
+  font-size: clamp(1.2rem, 2vw, 2rem); 
+  color: #3A2518;
+}
+
+.tree-column {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%; 
+  display: flex;
+  justify-content: flex-end; 
+  align-items: flex-end; 
+  z-index: 1;
+  pointer-events: none;
+}
+
+.autumn-tree {
+  height: clamp(60vh, 118vh - 60px, 95vh); 
+  width: auto;
+  object-fit: contain;
+  object-position: bottom right;
+  display: block; 
+  transform: translateX(2vw) translateY(7vh);
+  transition: transform 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+}
+
+.falling-leaves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.leaf {
+  position: absolute;
+  top: -50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
+@keyframes fall-drift {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  25% { transform: translate(40px, 25vh) rotate(180deg); }
+  50% { transform: translate(-30px, 50vh) rotate(360deg); }
+  75% { transform: translate(35px, 75vh) rotate(540deg); }
+  100% { transform: translate(0, 105vh) rotate(720deg); opacity: 0.3; }
+}
+
+@keyframes fall-swirl {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0; }
+  10% { opacity: 1; }
+  25% { transform: translate(-50px, 25vh) rotate(-120deg) scale(1.1); }
+  50% { transform: translate(40px, 50vh) rotate(-240deg) scale(0.9); }
+  75% { transform: translate(-35px, 75vh) rotate(-480deg) scale(1.05); }
+  100% { transform: translate(0, 105vh) rotate(-720deg) scale(1); opacity: 0.3; }
+}
+
+@media (max-width: 1200px) {
+  .autumn-tree {
+    transform: translateX(6vw) translateY(9vh);
+  }
+}
+
+@media (max-width: 1024px) {
+  .autumn-tree {
+    height: 100vh; 
+    transform: translateX(30vw) translateY(7vh);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-section {
+    padding-top: 60px;
+  }
+  
+  .left-column {
+    position: absolute;
+    top: 67%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 75%;
+    padding-left: 15px;
+    z-index: 10;
+  }
+
+  .guitar-container {
+    font-size: clamp(3rem, 15vw, 3rem);
+  }
+
+  .autumn-tree {
+    height: 142vh; 
+    transform: translateX(95vw) translateY(10vh);
+    opacity: 0.95; 
+  }
+}
+
+@media (max-width: 480px) {
+  .autumn-tree {
+    height: 150vh;
+    transform: translateX(105vw) translateY(11vh);
+    opacity: 0.9;
+  }
+}

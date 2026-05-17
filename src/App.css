@@ -1,0 +1,55 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #faf3e0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  color: #faf3e0; 
+}
+
+a {
+  color: #FFD700; 
+  text-decoration: none;
+}
+a:hover {
+  color: #e6b800;
+}
+
+.overlay h1 {
+  font-size: 3.5rem;
+  color: #FFD700;
+  margin: 0;
+}
+
+.overlay p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  color: #f5f5f5;
+}
+
+.nav-link-custom {
+  position: relative;
+  color: #f5e170ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link-custom:hover {
+  color: #fff; 
+}
+
+.nav-link-custom::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; 
+  width: 0%;
+  height: 2px;
+  background-color: #f5e170ff; 
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link-custom:hover::after {
+  width: 100%;
+}

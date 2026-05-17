@@ -1,0 +1,252 @@
+.resume-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+  background-color: #faf3e0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hardware-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto 50px auto;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.device-frame {
+  background: #3A2518;
+  border-width: 16px 16px 60px 16px; 
+  border-style: solid;
+  border-color: #3A2518;
+  border-radius: 16px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  height: 500px; 
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.device-screen {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.pdf-container {
+  width: 100%;
+  height: 100%; 
+  overflow-y: auto;
+  background: #fff;
+  padding: 15px 10px 10px 10px !important;
+  box-sizing: border-box; 
+  display: block;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+  border-radius: 4px;
+}
+
+.screen-on .pdf-container {
+  opacity: 1;
+}
+
+.embedded-download {
+  position: absolute;
+  bottom: -46px; 
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 24px;
+  font-size: 1rem;
+  border-radius: 20px;
+  z-index: 50;
+  white-space: nowrap;
+  background: #c4573d;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(196, 87, 61, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.embedded-download:hover {
+  background: #a34630;
+  color: white;
+  transform: translateX(-50%);
+}
+
+.device-stand {
+  width: 60px;
+  height: 40px;
+  background: #3A2518;
+  transition: all 0.4s ease;
+}
+
+.device-base {
+  width: 300px;
+  height: 12px;
+  background: #3A2518;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.4s ease;
+}
+
+.react-pdf__Document {
+  display: inline-block;
+  width: 100%;
+}
+
+.resume-fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #faf3e0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 50px 10px 20px 10px;
+}
+
+.fullscreen-close-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 10000;
+  transition: all 0.2s ease;
+}
+
+.fullscreen-close-btn:active {
+  transform: scale(0.95);
+}
+
+.fullscreen-pdf-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fullscreen-pdf-wrapper .react-pdf__Page canvas {
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin-bottom: 0 !important; 
+}
+
+.react-pdf__Page {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important; 
+  min-width: 0 !important; 
+}
+
+.react-pdf__Page canvas {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important; 
+  margin: 0 auto 20px auto !important; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 992px) {
+  .device-frame {
+    max-width: 700px;
+    height: 650px;
+    border-width: 30px 16px 60px 16px; 
+    border-radius: 20px;
+  }
+  
+  .device-screen {
+    border-radius: 6px;
+  }
+
+  .tablet .device-stand,
+  .tablet .device-base,
+  .mobile .device-stand,
+  .mobile .device-base {
+    height: 0;
+    opacity: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-section {
+    padding: 40px 0;
+  }
+
+  .device-frame {
+    max-width: 350px;
+    height: 550px;
+    border-width: 40px 12px 65px 12px; 
+    border-radius: 35px;
+  }
+
+  .device-screen {
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .pdf-container {
+    overflow: hidden !important; 
+    pointer-events: none; 
+  }
+
+  .tap-to-expand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+    opacity: 0;
+    animation: pulseHint 3s infinite 2s;
+  }
+
+  .embedded-download {
+    bottom: -50px;
+    padding: 8px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes pulseHint {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}

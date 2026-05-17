@@ -215,7 +215,7 @@
 @media (max-width: 600px) {
   .autumn-tree {
     height: 142vh; 
-    transform: translateX(55vw) translateY(5vh);
+    transform: translateX(25vw) translateY(3vh);
     opacity: 0.95; 
   }
 }

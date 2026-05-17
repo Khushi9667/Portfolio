@@ -197,12 +197,25 @@
   }
 
   .guitar-container {
-    font-size: clamp(3rem, 15vw, 3rem);
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .guitar-text {
+    flex-wrap: nowrap;
+    white-space: nowrap; 
   }
 
   .autumn-tree {
     height: 142vh; 
     transform: translateX(95vw) translateY(10vh);
+    opacity: 0.95; 
+  }
+}
+
+@media (max-width: 600px) {
+  .autumn-tree {
+    height: 142vh; 
+    transform: translateX(55vw) translateY(5vh);
     opacity: 0.95; 
   }
 }

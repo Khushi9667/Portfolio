@@ -14,6 +14,7 @@ const Footer = () => {
   const [startFlying, setStartFlying] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,7 +34,18 @@ const Footer = () => {
     return () => observer.disconnect();
   }, []);
 
-const sendEmail = (e) => {
+  useEffect(() => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/iPhone|iPad|iPod|Android/i.test(userAgent)) {
+      setIsMobile(true);
+    }
+  }, []);
+
+  const email = "khushijain.25.2003@gmail.com";
+  const mobileLink = `mailto:${email}`;
+  const desktopLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+
+  const sendEmail = (e) => {
     e.preventDefault();
     setIsSending(true);
 
@@ -99,8 +111,8 @@ const sendEmail = (e) => {
                   </div>
                   <div className="tech-icons">
                     <a 
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=khushijain.25.2003@gmail.com" 
-                      target="_blank" 
+                      href={isMobile ? mobileLink : desktopLink} 
+                      target={isMobile ? "_self" : "_blank"} 
                       rel="noopener noreferrer"
                       aria-label="Email"
                     >

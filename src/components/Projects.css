@@ -451,6 +451,7 @@ body {
 
 .card-yelpcamp project-image {
   transform: translateY(-5%);
+}
 
 .modal-details-content {
   flex: 1 1 0; 

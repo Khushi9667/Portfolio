@@ -449,6 +449,9 @@ body {
   filter: drop-shadow(0 8px 12px rgba(227, 215, 215, 0.4));
 }
 
+.card-yelpcamp project-image {
+  transform: translateY(-2%);
+
 .modal-details-content {
   flex: 1 1 0; 
   display: flex; 
